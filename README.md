@@ -3,11 +3,11 @@ You can see information about my project
 
 ![viewfinal](https://imgurl.ir/uploads/p688173_Screenshot_104.png)
 
-- [Demo Project](https://mohammadjodaki.github.io/card-bank-js/)
+- [Demo Project](https://mohammadjodaki.github.io/clock-js/)
 
 - Developed by mohammad jodaki
 
-- Created - 2024-07-03
+- Created - 2024-07-10
 
 - Technologies Used - Html , css , tailwind , javascript
 
