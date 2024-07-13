@@ -26,8 +26,23 @@ const myClock = () =>{
 setInterval(myClock,0);
 let timealarm
 setalarm.addEventListener('click', () => {
-    timealarm = `${select[0].value.padStart(2, '0')}:${select[1].value.padStart(2, '0')}`
-    setalarm.innerHTML = 'clear alarm'
-    content.style.pointerEvents = 'none'
-    content.style.opacity = '0.5'
+    timealarm = `${select[0].value}:${select[1].value}`
+    state()
 });
+let alarmstate = 'noset'
+function state(){
+    if(alarmstate == 'noset'){
+        setalarm.innerHTML = 'clear alarm'
+        content.style.pointerEvents = 'none'
+        content.style.opacity = '0.5'
+        alarmstate = 'set'
+    }
+    else{
+        setalarm.innerHTML = 'set alarm'
+        content.style.pointerEvents = 'auto'
+        content.style.opacity = '1'
+        alarmstate = 'noset'
+        alarm.pause()
+        alarm.loop = false
+    }
+}
