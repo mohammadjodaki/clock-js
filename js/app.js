@@ -24,7 +24,7 @@ const myClock = () =>{
     }
 }
 setInterval(myClock,0);
-let timealarm
+let timealarm 
 setalarm.addEventListener('click', () => {
     timealarm = `${select[0].value}:${select[1].value}`
     state()
@@ -38,6 +38,7 @@ function state(){
         alarmstate = 'set'
     }
     else{
+        timealarm = ''
         setalarm.innerHTML = 'set alarm'
         content.style.pointerEvents = 'auto'
         content.style.opacity = '1'
