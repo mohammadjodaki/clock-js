@@ -2,6 +2,7 @@ const span = document.querySelectorAll('#clock>span')
 const timeClock = document.getElementById('time')
 const setalarm = document.querySelector('button')
 const select = document.querySelectorAll('select')
+const content = document.getElementById('content')
 const alarm = new Audio('./audio/MyRingtone.IR_1582398713_4338.mp3')
 const myClock = () =>{
     let time = new Date()
@@ -17,7 +18,7 @@ const myClock = () =>{
     Sec = Sec < 10 ? '0' + Sec : Sec
     timeClock.innerHTML = `${Hour}:${Min}:${Sec}`
 
-        if (`${Hour}:${Min}` === timealarm) {
+        if (timealarm === `${Hour}:${Min}`) {
         alarm.play()
         alarm.loop = true
     }
@@ -25,5 +26,8 @@ const myClock = () =>{
 setInterval(myClock,0);
 let timealarm
 setalarm.addEventListener('click', () => {
-    timealarm = `${select[0].value.padStart(2, '0')}:${select[1].value.padStart(2, '0')}`;
+    timealarm = `${select[0].value.padStart(2, '0')}:${select[1].value.padStart(2, '0')}`
+    setalarm.innerHTML = 'clear alarm'
+    content.style.pointerEvents = 'none'
+    content.style.opacity = '0.5'
 });
